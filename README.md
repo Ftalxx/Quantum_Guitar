@@ -1,10 +1,10 @@
 # **Sensor Haptic Guitar with Quantum Probabilistic Data Analysis**
 
-## <u>**Project Overview**</u>
+## <ins>**Project Overview**</ins>
 This project explores a novel interactive music system that fuses wearable sensor-based instrumentation (using a midi interface) with quantum and algorithm inspired data processing. The central aim is to investigate how probabilistic quantum ouputs driven by user gestures can shape generative music and offer insight into the edge between structured harmony and controlled chaos. 
 </br>
 
-## <u>**Background & Intuitive Ideas**</u>
+## <ins>**Background & Intuitive Ideas**</ins>
 
 ### Real-time Musical Interaction
 (*Can I use the input from the client to give recommendations of possible songs that might sound good?*)
