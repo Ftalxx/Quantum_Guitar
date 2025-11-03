@@ -1,25 +1,32 @@
 # **Sensor Haptic Guitar with Quantum Probabilistic Data Analysis**
-
-## Background & Intuitive Ideas
 </br>
 
-### Robotics and Algorithms
-(Can I use the input from the client to give recommendations of possible songs that might sound good?)
+## **Project Overview**
+This project explores a novel interactive music system that fuses wearable sensor-based instrumentation (using a midi interface) with quantum and algorithm inspired data processing. The central aim is to investigate how probabilistic quantum ouputs driven by user gestures can shape generative music and offer insight into the edge between structured harmony and controlled chaos. 
+</br>
+
+## **Background & Intuitive Ideas**
+
+### Real-time Musical Interaction
+(*Can I use the input from the client to give recommendations of possible songs that might sound good?*)
 <br>
-- Client input through an interactive virtual instrument (guitar) connected to midi
-- Data recording of sensor input
-- Analysis and comparison of possible following notes and chords based on regular computer algorithms of music theory
+- Users play a **virtual guitar** instrument using a wearable sensor system (finger rings and wrist-mounted ToF sensors).
+- Inputs (strums, finger positions) are converted to MIDI signals and timestamped for **data logging**.
+- These sensor values guide algorithmic recommendations of **musically viable follow-ups** based on classical **music theory rules** (chord progressions, scale compatibility, rhythmic flow).
 
 ### Data Analysis and Quantum
-(What does Quantum sound like when compared to our idea of music? If not music then how does it sound in general when compared to regular algorithms?)
+( *What does "quantum logic" sound like? Can we hear the "texture" of quantum unpredictability?*)
 </br>
-- Connection of quantum and sound
-- Usage of probabilistic states of a particle in Qiskit to analyze guitar input
-- Analysis to look for any sort of connection (think vibrational waves of sound vs quantum)
-
+- Introduces **Qiskit-based quantum circuits**, where classical input biases gate rotations or entanglements.
+- Measurement results from these circuits introduce **probabilistic variation** into:
+  - Chord choice
+  - Rhythm pattern
+  - Timbre modulation
+    
 ### Visualization and Human Expression
-(Can we showcase in an easy way for people to digest? Humanize the idea of quantum slightly or find a way this project might help people understand?)
+(*Can we showcase in an easy way for people to digest? Humanize the idea of quantum slightly or find a way this project might help people understand?*)
+> Think of it as a duet between player and improviser.
 </br>
-- Interactive
-- Relatively cheap
-- use visualizations to compare (While playing)
+- **Interactive**: Real-time feedback from gestures + visualizations.
+- **Affordable**: DIY electronics using ESP32, sensors, and open-source code.
+- **Educational**: Makes quantum ideas tangible through audio-visual feedback.
