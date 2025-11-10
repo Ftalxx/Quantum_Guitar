@@ -121,15 +121,6 @@ The system is designed around modular interaction—hardware and software layers
 - **Bluetooth MIDI module** – For wireless control
 - **OLED display** – Mounted to backplate or wrist to show mode/status
 
----
-
-## Assembly Overview (coming soon...)
-
-- Modular JST-connected sensor rings
-- Center harness routes to ESP32 & power on backplate
-- USB-C port for charging + live MIDI/serial data
-
-
 
 ## <ins>Sensor Hardware Overview</ins>
 The physical setup is designed to feel as close to "air-guitar" as possible but with embedded intelligence.  
