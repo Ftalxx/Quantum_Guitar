@@ -40,6 +40,92 @@ The system is designed around modular interaction—hardware and software layers
 
 [ sensor input ] → [ ESP32 harness ] → [ MIDI / serial output ] → [ Python + Qiskit ] → [ generative response / MIDI out ] → [ Visualization / Terminal ]
 
+## <ins>Hardware & Software Components</ins>
+
+### Wearable Sensor System
+
+- **ESP32 microcontroller**  
+  - Central processing unit for reading sensor inputs and sending MIDI/serial data
+
+- **VL53L0X ToF (Time-of-Flight) distance sensors**  
+  - Mounted on finger rings for sensing fret-style finger positions  
+  - Optional palm-mounted version for strumming detection
+
+- **TCA9548A I2C Multiplexer**  
+  - Allows multiple identical I2C sensors (VL53L0X) to communicate with ESP32  
+  - Necessary for managing up to 8 sensor channels
+
+- **Potentiometers / knobs (rotary)**  
+  - For controlling modes, pitch bend, or effects in real-time
+
+- **Rocker switches**  
+  - Toggle between algorithmic/quantum modes or change presets
+
+- **JST connectors and harnesses**  
+  - Used for modular, detachable sensor wiring through the wearable harness
+
+- **Braided sleeving & heat-shrink tubing**  
+  - Protect and organize cables; used along harness straps and finger connections
+
+- **Carbon-fiber or hard foam-core backplate**  
+  - Mounting platform for ESP32, battery pack, and multiplexer  
+  - May be integrated into a wearable “cyber gear” styled harness
+
+- **Velcro strap harness (rewearable)**  
+  - Holds cables and sensor modules in place, body-worn design
+
+- **USB-C rechargeable power bank (10,000 mAh)**  
+  - Powers the ESP32 and sensors; chosen for portability and longevity
+
+---
+
+### Software Stack
+
+- **Arduino IDE**  
+  - Used to write and upload firmware to the ESP32  
+  - Manages sensor reading, data smoothing, and MIDI or serial output
+
+- **Python (desktop app)**  
+  - Reads sensor data via USB or serial  
+  - Converts input to MIDI or triggers algorithmic/quantum responses
+
+- **Qiskit (IBM Quantum)**  
+  - Simulates or runs quantum circuits using classical sensor input as gate parameters  
+  - Collapses qubits to generate musical decisions (notes, chords, effects)
+
+- **MIDI output (via pyMIDI or rtmidi-python)**  
+  - Connects to DAW or external synth for audio generation  
+  - May route to software like:
+    - **Ableton Live**
+    - **Logic Pro**
+    - **GarageBand**
+    - **FluidSynth / virtual instruments**
+
+- **Data Logging & Visualization Tools**  
+  - Logs timestamped inputs, decisions, and outputs  
+  - Optional visualization with:
+    - **Matplotlib / Seaborn** (for waveform/entropy plots)
+    - **Processing or P5.js** (for real-time visuals)
+    - **Qiskit Visualizations** (for circuit + histogram)
+
+---
+
+### Planned Enhancements
+
+- **Force-sensitive resistors (FSRs)** – For finer dynamic control
+- **Gyroscope / IMU** – To detect hand orientation or gestural strumming angles
+- **Bluetooth MIDI module** – For wireless control
+- **OLED display** – Mounted to backplate or wrist to show mode/status
+
+---
+
+## Assembly Overview (coming soon...)
+
+- Modular JST-connected sensor rings
+- Center harness routes to ESP32 & power on backplate
+- USB-C port for charging + live MIDI/serial data
+
+
 
 ## <ins>Sensor Hardware Overview</ins>
 The physical setup is designed to feel as close to "air-guitar" as possible but with embedded intelligence.  
