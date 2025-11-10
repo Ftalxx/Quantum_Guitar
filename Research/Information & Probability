@@ -6,7 +6,65 @@ Measurement-induced Randomness of a quantum system
 
 > How quantum measurements generate outcomes and where it becomes meaningful information and not junk.
 
-- Research Papers:
-  Chakrabarty, Indranil, et al. “Measurement-Induced Randomness and State-Merging.” International Journal of Quantum Information, vol. 16, no. 02, 1 Mar. 2018, pp. 1850018–1850018, ui.adsabs.harvard.edu/abs/2018IJQI...1650018C/abstract, https://doi.org/10.1142/s0219749918500181. Accessed 10 Nov. 2025.
+- Research Paper:
 
-Analysis: 
+Chakrabarty, Indranil, et al. “Measurement-Induced Randomness and State-Merging.” International Journal of Quantum Information, vol. 16, no. 02, 1 Mar. 2018, pp. 1850018–1850018, ui.adsabs.harvard.edu/abs/2018IJQI...1650018C/abstract, https://doi.org/10.1142/s0219749918500181. Accessed 10 Nov. 2025.
+
+  Analysis: 
+    Composite Classical System:
+
+      - Joint entropy: H(A,B) quantifies the randomness present in the system.
+          - it's equal to the sum of the entropy of one subsystem and the conditional energy of the other. 
+          (Only if we know the first subsystem - just think connection of y and x)
+
+      - Shannon entropy: (look up equation) measure of uncertainty for a classical probability distribution. Think probability what it can be before seeing it. A 6 sided die has low uncertainty because it will give all results equally.
+
+      - Vonneumman entropy: (look up equation) quantum mechanical generalization form of Shannon. Uncertainty but of a quantum state. 
+          !!! Don't think that Vonneumann is what the state cannot be, it's how "mixed" the state can be!!!
+          E.g. If a state is |0 > then entropy = 0 (state is pure)
+               If a state is 50% |0 > and 50% |1 > then entropy is higher than 0.
+
+          Shannon Vs. Vonneumann: Equivalent when the quantum state is pure or when the density matrix is diagonalized (Eigenvalues become the probabilities for shannon)
+
+      - Conditional entropy: H(B|A) "How uncertain am I about B after knowing what A is?"
+          Think about the connection of how knowing the weather might affect your day.
+          If it's raining -> I stay inside, go suntanning (Low uncertainty) even if not logical you can assume one from the other.
+          If it's raining -> I win the lottery (high uncertainty) illogical assumption.
+
+      - Average Conditional Entropy: Takes all the conditional entropy values. How uncertain all B's are then averages them out over all possible a.
+          (Look at paper for equation)
+          If H(Y|X) is small then X basically tells you Y -> informative
+          If H(Y|X) is large then X is useless. 
+
+    Definitions:
+      - Classical World: H(x,y) = H(x) + H(Y|X)
+                        joint            conditional 
+      - Quantum World: S(Pab) =? S(Pa) + S(Pb|a)  !! Impossible !!
+          - replace shannon with vonneummann
+          - replace conditional with quantum conditional
+
+      It's impossible for the quantum world because observing A changes the system. It collapses, B changes, entaglement is destroyed and a new randomness appears.
+
+    In the paper:
+      - They use average conditional entropy. Why? to argue that MIR is unique to quantum and has no classical counterpart.
+      MIR = Savg(B|measurement) + S(A) - S(A,B)    
+      S(A,B) = S(A) + Savg(B|A)
+
+      MIR proves tht quantum systems create randomness.
+
+      Think of it as: the extra entropy that did not exist before the system was observed.
+        - Let's say the particle is stable (pure and low entropy)
+        - The particle is observed and changes. Probabilities over many possible collapsed states.
+        - The new outcomes produce additional entropy just by observing.
+
+      What the paper argues and tries to prove? In processing tasks, the increase in cost can be understood by the additional randomness created by the act of measurement. 
+
+
+      
+
+
+
+
+      
+
+  
