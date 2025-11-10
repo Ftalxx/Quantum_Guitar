@@ -13,6 +13,8 @@ This project explores a novel interactive music system that fuses wearable senso
 - Inputs (strums, finger positions) are converted to MIDI signals and timestamped for **data logging**.
 - These sensor values guide algorithmic recommendations of **musically viable follow-ups** based on classical **music theory rules** (chord progressions, scale compatibility, rhythmic flow).
 
+--- 
+
 ### Data Analysis and Quantum
 ( *What does "quantum logic" sound like? Can we hear the "texture" of quantum unpredictability?*)
 </br>
@@ -21,7 +23,9 @@ This project explores a novel interactive music system that fuses wearable senso
   - Chord choice
   - Rhythm pattern
   - Timbre modulation
-    
+
+---
+
 ### Visualization and Human Expression
 (*Can we showcase in an easy way for people to digest? Humanize the idea of quantum slightly or find a way this project might help people understand?*)
 > Think of it as a duet between player and improviser.
@@ -136,11 +140,13 @@ The physical setup is designed to feel as close to "air-guitar" as possible but 
 - **Power**: Rechargeable 10,000 mAh USB-C bank mounted on a carbon-fiber or foam-core backplate.  
 - **Harness**: Braided JST cables routed through Velcro straps for rewearability.  
 
+---
+
 ### Optional add-ons:  
 - Rocker switches for mode shifting  
 - Potentiometer knobs for pitch bend or effect control  
 
-### <ins>Classical Algorithm Visualization</ins>
+## <ins>Classical Algorithm Visualization</ins>
 - Structured, hierarchical—like a **tree of decision nodes** based on music theory.
 - Shows:
   - Key
@@ -223,6 +229,8 @@ The goal isn’t to make a perfectly tuned instrument—it’s to ask:
 
 In both music and quantum mechanics, **wave behavior** governs how energy moves and how structure emerges from what looks like chaos.
 
+---
+
 ### A Structured Waveform  
 When you pluck a string, you're not just hearing a single frequency—you're hearing a blend of frequencies layered on top of each other, called **harmonics** or **overtones**.
 
@@ -235,6 +243,8 @@ The pattern is mathematically precise:
 
 In short: a string is chaotic at the micro level—but when it resonates, order emerges.
 
+---
+
 ### Quantum Wavefunctions: Probability with Structure  
 Similarly, in **quantum mechanics**, particles are described by **wavefunctions** mathematical functions that hold all possible information about the system.
 
@@ -244,13 +254,17 @@ Similarly, in **quantum mechanics**, particles are described by **wavefunctions*
 
 So both musical notes and quantum particles show **discrete resonance patterns** emergent from continuous wave equations.
 
+---
+
 ### <ins>Research Connections</ins> 
 Physicists and mathematicians have long noted this connection:
 
 - **Fourier analysis** the same tool used to decompose sound into frequencies, is foundational in quantum theory for analyzing wavefunctions.
 - **Quantum harmonic oscillators** a standard model in quantum mechanics, mirror the math of vibrating strings and sound waves—solutions are built from Hermite polynomials layered over Gaussian envelopes.
 - Recent work in **quantum chaos theory** examines how deterministic quantum systems (like perturbed harmonic oscillators) can still produce statistically random patterns—akin to **inharmonic overtones** in acoustics.
-  
+
+---
+
 ### <ins>Why This Matters</ins>
 In this project, the quantum engine may look “random” but it could still contain **hidden resonance patterns**:
 
