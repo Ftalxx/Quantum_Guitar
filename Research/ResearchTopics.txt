@@ -1,0 +1,33 @@
+Background Research:
+    Generative Systems:
+        - Randomness in generative art
+        - Algorithmic Composition
+        - Stochastic process in audio generation
+        - Noise as information
+        - randomnes vs. pseudorandomness
+    
+    Algorithmic Composition:
+        - Markov chain music generation
+        - Midi Driven Generative Systems
+
+    Sonification of data:
+        - Sonification of wave functions
+        - Sonification of probabilities
+
+    Information and Probability:
+        - Measurement induced Randomness
+        - Stochastoc resonance
+        - Harmonic Oscillator
+        - Fourier Analysis
+
+    Physics and Music:
+        - Musical Acoustics
+        - Harmonic series & Wave Equation
+        - Standing Waves & quantization
+        - Mathematical structure of harmonics
+
+    Chaos:
+        - Chaotic Systems in musical Composition
+        - Noise Music Theory
+        - Music as nonlinear dynamical Systems
+        - Energy level quantization
