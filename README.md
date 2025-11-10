@@ -35,7 +35,7 @@ This project explores a novel interactive music system that fuses wearable senso
 
 ## <ins>System Architecture</ins>
 
-The system is designed around modular interaction—hardware and software layers communicating in real time.  
+The system is designed around modular interaction hardware and software layers communicating in real time.  
 
 - **Wearable sensor network**: ToF sensors and potentiometers mounted on finger rings and wristbands capture motion, proximity, and “strumming” gestures.  
 - **ESP32 microcontroller**: Reads sensor values, processes thresholds, and sends MIDI data or serial output.  
@@ -138,7 +138,7 @@ The physical setup is designed to feel as close to "air-guitar" as possible but 
 - Potentiometer knobs for pitch bend or effect control  
 
 ## <ins>Classical Algorithm Visualization</ins>
-- Structured, hierarchical—like a **tree of decision nodes** based on music theory.
+- Structured, hierarchical like a **tree of decision nodes** based on music theory.
 - Shows:
   - Key
   - Recent chord or note
@@ -166,10 +166,10 @@ The result? Controlled unpredictability. The particles / guitar are *playing wit
   - Implementing a **feedback loop**, where outcomes bias future gates (musical learning over time)
  
 ## <ins>Visualization Plans: Classical vs Quantum</ins>  
-- To help users—and myself—understand what’s really happening, I’ll be building **two distinct visualizations**, one for each engine (classical vs. quantum)
+- To help users and myself understand what’s really happening, I’ll be building **two distinct visualizations**, one for each engine (classical vs. quantum)
 - I'll then utilize the data to go deeper into research regarding the sound of quantum and the universe.
 
-This project isn’t just about sound—it's about *how different kinds of logic create sound*. Keeping the visualizations separate:
+This project isn’t just about sound it's about *how different kinds of logic create sound*. Keeping the visualizations separate:
 - Makes it easier to compare **structure vs randomness**
 - Shows that both engines can be musical, but in very different ways
 - Helps audiences *feel* the weirdness of quantum vs the stability of music theory
@@ -177,7 +177,7 @@ This project isn’t just about sound—it's about *how different kinds of logic
 
 ## <ins>Goals & Hypotheses</ins> 
 
-- Human + quantum co-creation will lead to novel generative music patterns not reproducible by deterministic algorithms alone. Users can develop a *feel* for how quantum biasing behaves over time—without ever needing to understand quantum math.  
+- Human + quantum co-creation will lead to novel generative music patterns not reproducible by deterministic algorithms alone. Users can develop a *feel* for how quantum biasing behaves over time without ever needing to understand quantum math.  
 
 This system could be used for:  
 - Experimental music composition  
@@ -186,7 +186,7 @@ This system could be used for:
 
 ## <ins>Sound and Quantum Waves: The Hidden Language of the Universe</ins>
 
-Both **sound** and **quantum behavior** are expressions of waves—vibrations moving through time and space.  
+Both **sound** and **quantum behavior** are expressions of waves vibrations moving through time and space.  
 
 - Sound waves are **vibrations in air** that we perceive with our ears.  
 - Quantum waves (like wavefunctions) are **probability amplitudes**, abstract but real, describing how particles behave.  
@@ -201,7 +201,7 @@ I’ve always felt there was a kind of **cosmic meaning** in this. Like maybe th
 This project asks:
 - *What if we could listen to quantum behavior the same way we listen to a song?*
 - *What if collapsing a quantum wave felt like resolving a chord progression?*
-- *What if uncertainty wasn’t chaos—but harmony we haven’t learned to hear yet?*
+- *What if uncertainty wasn’t chaos but harmony we haven’t learned to hear yet?*
 
 By using sound as a medium for quantum interaction, I’m not just building a tool, I’m trying to **bridge two invisible worlds**. One that we’ve studied through physics, and one we’ve lived through music. Even if that music is not culturally pleasing to us there is some kind of noise being made.
 
@@ -209,12 +209,12 @@ In this system, noise isn’t failure. It’s **the signal of complexity**.
 
 - Quantum outcomes may generate dissonant or unpredictable sounds.
 - Sensor inputs may drift or collide in ways that don’t “make sense.”
-- The result might feel broken—or maybe it's just unfamiliar.
+- The result might feel broken or maybe it's just unfamiliar.
 
-The goal isn’t to make a perfectly tuned instrument—it’s to ask:
+The goal isn’t to make a perfectly tuned instrument it’s to ask:
 - *Can randomness be emotionally resonant?*
 - *What if we stopped filtering out the weird?*
-- *Can we build an instrument that listens back—one that meets us with its own logic?*
+- *Can we build an instrument that listens back one that meets us with its own logic?*
 
 ## Harmonics and Connection
 
@@ -223,7 +223,7 @@ In both music and quantum mechanics, **wave behavior** governs how energy moves 
 ---
 
 ### A Structured Waveform  
-When you pluck a string, you're not just hearing a single frequency—you're hearing a blend of frequencies layered on top of each other, called **harmonics** or **overtones**.
+When you pluck a string, you're not just hearing a single frequency you're hearing a blend of frequencies layered on top of each other, called **harmonics** or **overtones**.
 
 - The **fundamental frequency** is the base note you hear (e.g., A = 440 Hz).
 - **Harmonics** are integer multiples of this base frequency (880 Hz, 1320 Hz, etc.).
@@ -232,7 +232,7 @@ When you pluck a string, you're not just hearing a single frequency—you're hea
 The pattern is mathematically precise:  
 > A vibrating string of length *L* fixed at both ends has natural modes where standing waves form at **L/n**, producing frequencies **fₙ = n·f₁**, where n = 1, 2, 3...
 
-In short: a string is chaotic at the micro level—but when it resonates, order emerges.
+In short: a string is chaotic at the micro level but when it resonates, order emerges.
 
 ---
 
@@ -251,8 +251,8 @@ So both musical notes and quantum particles show **discrete resonance patterns**
 Physicists and mathematicians have long noted this connection:
 
 - **Fourier analysis** the same tool used to decompose sound into frequencies, is foundational in quantum theory for analyzing wavefunctions.
-- **Quantum harmonic oscillators** a standard model in quantum mechanics, mirror the math of vibrating strings and sound waves—solutions are built from Hermite polynomials layered over Gaussian envelopes.
-- Recent work in **quantum chaos theory** examines how deterministic quantum systems (like perturbed harmonic oscillators) can still produce statistically random patterns—akin to **inharmonic overtones** in acoustics.
+- **Quantum harmonic oscillators** a standard model in quantum mechanics, mirror the math of vibrating strings and sound waves solutions are built from Hermite polynomials layered over Gaussian envelopes.
+- Recent work in **quantum chaos theory** examines how deterministic quantum systems (like perturbed harmonic oscillators) can still produce statistically random patterns akin to **inharmonic overtones** in acoustics.
 
 ---
 
