@@ -6,7 +6,7 @@ Measurement-induced Randomness of a quantum system
 
     > How quantum measurements generate outcomes and where it becomes meaningful information and not junk.
 
-      - Research Paper:
+    - Research Paper:
 
         Chakrabarty, Indranil, et al. “Measurement-Induced Randomness and State-Merging.” International Journal of Quantum Information, vol. 16, no. 02, 1 Mar. 2018, pp. 1850018–1850018, ui.adsabs.harvard.edu/abs/2018IJQI...1650018C/abstract, https://doi.org/10.1142/s0219749918500181. Accessed 10 Nov. 2025.
 
@@ -70,7 +70,7 @@ Stochastic Resonance
 
     > Cases where adding noise actually improves signal detection, the basis idea of controlled musical chaos.
 
-      - Research Paper:
+    - Research Paper:
 
         Mannel, H., et al. “Quantum Stochastic Resonance in a Single-Photon Emitter.” Communications Physics, vol. 8, no. 1, 14 Oct. 2025, arxiv.org/abs/2505.14221, https://doi.org/10.1038/s42005-025-02334-4. Accessed 12 Nov. 2025.
 
@@ -131,7 +131,23 @@ Stochastic Resonance
 Harmonic Oscillator
     > The mathematical model shared by vibrating strings and quantum particles, both built from discrete resonance modes.
 
-      - Research Paper:
+    - Research Paper:
+            
+
+    - Analysis: 
+      
+    - In the paper:
+      
+     - Analysis of Usage in project:
+      
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Fourier Analysis
+    > The universal language of wave behavior, used to decompose signals in both music and quantum wavefunctions.
+      
+    - Research Paper:
             
 
     - Analysis: 
