@@ -276,3 +276,11 @@ Basic plan:
 - Run the Python bridge script  
 - Connect to DAW or audio engine
 - Visualize
+
+Additional ideas while researching:
+
+(due to stochastic)
+- Demonstrate CHSH violation and sonify it as musical tension.
+- Show stochastic resonance by finding a noise level where quantum-driven switches synchronize with rhythm, quantitatively and audibly.
+- Prototype measurement-based control, where basis choices from gesture steer musical structure.
+- Treat decoherence parameters as musical knobs, turning lab-grade error models into sound design.
