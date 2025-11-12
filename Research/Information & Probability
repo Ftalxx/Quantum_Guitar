@@ -1,4 +1,4 @@
-> Both music and quantum systems are governed by rules of information and probability. Even a single musical note is not a single frequency, it is a distribution of energy shaped by mathematical patterns. Likewise, quantum states exist as probability amplitudes that only become definite when measured.
+> Both music and quantum systems are governed by rules of information and probability. Even a single musical note is not a single frequency, it is a distribution of energy shaped by mathematical patterns. Quantum states exist as probability amplitudes that only become definite when measured.
 
 Topics
 
@@ -131,15 +131,20 @@ Stochastic Resonance
 Harmonic Oscillator
     > The mathematical model shared by vibrating strings and quantum particles, both built from discrete resonance modes.
 
-    - Research Paper:
-            
+    - Research Paper :
+        Hooft, Gerard t. “The Hidden Ontological Variable in Quantum Harmonic Oscillators.” ArXiv.org, 2024, arxiv.org/abs/2407.18153. Accessed 12 Nov. 2025.
 
     - Analysis: 
-      
-    - In the paper:
-      
+        A diatomic molecule vibrates somewhat like two masses on a spring with a potential energy that depends upon the square of the displacement from equilibrium. 
+        use the classical expression k = mw^2 to limit mention of a “spring” constant between the atoms.
+        Then it is plugged in and combined with the time-independent Schroginger to give the formula.
+
+     - In the paper:
+        The author hints at the idea of unforeseeable variables that are not considered when talking about quantum harmonic oscillators.
+        He came up with the conclusion that the harmonic oscillator requires no special axiom for the collapse of the wave function – provided that we stick to the observables in φ space. 
+
      - Analysis of Usage in project:
-      
+        Background knowledge of concept from where vibrations come from in the quantum system.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
