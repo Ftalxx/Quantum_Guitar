@@ -4,69 +4,124 @@ Topics
 
 Measurement-induced Randomness of a quantum system
 
-> How quantum measurements generate outcomes and where it becomes meaningful information and not junk.
+    > How quantum measurements generate outcomes and where it becomes meaningful information and not junk.
 
-- Research Paper:
+      - Research Paper:
 
-Chakrabarty, Indranil, et al. “Measurement-Induced Randomness and State-Merging.” International Journal of Quantum Information, vol. 16, no. 02, 1 Mar. 2018, pp. 1850018–1850018, ui.adsabs.harvard.edu/abs/2018IJQI...1650018C/abstract, https://doi.org/10.1142/s0219749918500181. Accessed 10 Nov. 2025.
+        Chakrabarty, Indranil, et al. “Measurement-Induced Randomness and State-Merging.” International Journal of Quantum Information, vol. 16, no. 02, 1 Mar. 2018, pp. 1850018–1850018, ui.adsabs.harvard.edu/abs/2018IJQI...1650018C/abstract, https://doi.org/10.1142/s0219749918500181. Accessed 10 Nov. 2025.
 
-  Analysis: 
-    Composite Classical System:
+    - Analysis: 
+        Composite Classical System:
 
-      - Joint entropy: H(A,B) quantifies the randomness present in the system.
-          - it's equal to the sum of the entropy of one subsystem and the conditional energy of the other. 
+        Joint entropy: H(A,B) quantifies the randomness present in the system.
+          It's equal to the sum of the entropy of one subsystem and the conditional energy of the other. 
           (Only if we know the first subsystem - just think connection of y and x)
 
-      - Shannon entropy: (look up equation) measure of uncertainty for a classical probability distribution. Think probability what it can be before seeing it. A 6 sided die has low uncertainty because it will give all results equally.
+        Shannon entropy: (look up equation) measure of uncertainty for a classical probability distribution. Think probability what it can be before seeing it. A 6 sided die has low uncertainty because it will give all results equally.
 
-      - Vonneumman entropy: (look up equation) quantum mechanical generalization form of Shannon. Uncertainty but of a quantum state. 
+        Vonneumman entropy: (look up equation) quantum mechanical generalization form of Shannon. Uncertainty but of a quantum state. 
           !!! Don't think that Vonneumann is what the state cannot be, it's how "mixed" the state can be!!!
           E.g. If a state is |0 > then entropy = 0 (state is pure)
                If a state is 50% |0 > and 50% |1 > then entropy is higher than 0.
 
-          Shannon Vs. Vonneumann: Equivalent when the quantum state is pure or when the density matrix is diagonalized (Eigenvalues become the probabilities for shannon)
+        Shannon Vs. Vonneumann: Equivalent when the quantum state is pure or when the density matrix is diagonalized (Eigenvalues become the probabilities for shannon)
 
-      - Conditional entropy: H(B|A) "How uncertain am I about B after knowing what A is?"
+        Conditional entropy: H(B|A) "How uncertain am I about B after knowing what A is?"
           Think about the connection of how knowing the weather might affect your day.
           If it's raining -> I stay inside, go suntanning (Low uncertainty) even if not logical you can assume one from the other.
           If it's raining -> I win the lottery (high uncertainty) illogical assumption.
 
-      - Average Conditional Entropy: Takes all the conditional entropy values. How uncertain all B's are then averages them out over all possible a.
+        Average Conditional Entropy: Takes all the conditional entropy values. How uncertain all B's are then averages them out over all possible a.
           (Look at paper for equation)
           If H(Y|X) is small then X basically tells you Y -> informative
           If H(Y|X) is large then X is useless. 
 
-    Definitions:
-      - Classical World: H(x,y) = H(x) + H(Y|X)
+    - Definitions:
+        Classical World: H(x,y) = H(x) + H(Y|X)
                         joint            conditional 
-      - Quantum World: S(Pab) =? S(Pa) + S(Pb|a)  !! Impossible !!
+        Quantum World: S(Pab) =? S(Pa) + S(Pb|a)  !! Impossible !!
           - replace shannon with vonneummann
           - replace conditional with quantum conditional
 
       It's impossible for the quantum world because observing A changes the system. It collapses, B changes, entaglement is destroyed and a new randomness appears.
 
-    In the paper:
-      - They use average conditional entropy. Why? to argue that MIR is unique to quantum and has no classical counterpart.
-      MIR = Savg(B|measurement) + S(A) - S(A,B)    
-      S(A,B) = S(A) + Savg(B|A)
+    - In the paper:
+        They use average conditional entropy. Why? to argue that MIR is unique to quantum and has no classical counterpart.
+        MIR = Savg(B|measurement) + S(A) - S(A,B)    
+        S(A,B) = S(A) + Savg(B|A)
 
-      MIR proves tht quantum systems create randomness.
+        MIR proves that quantum systems create randomness.
 
       Think of it as: the extra entropy that did not exist before the system was observed.
         - Let's say the particle is stable (pure and low entropy)
         - The particle is observed and changes. Probabilities over many possible collapsed states.
         - The new outcomes produce additional entropy just by observing.
 
-      What the paper argues and tries to prove? In processing tasks, the increase in cost can be understood by the additional randomness created by the act of measurement. 
+        What the paper argues and tries to prove? In processing tasks, the increase in cost can be understood by the additional randomness created by the act of measurement. 
 
-     Analysis of Usage in project:
+     - Analysis of Usage in project:
       Theoretically I'm using this just to be able to see that randomness can be purposeful. I will try to measure and let that decide what changes so it's not entirely randomized. Measurements can be considered as part of the audio synthesis, less measurements can be expected to be a smoother melody. Frequency of how many times we measure can be used as a control for musical entropy.
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+Stochastic Resonance
+
+    > Cases where adding noise actually improves signal detection, the basis idea of controlled musical chaos.
+
+      - Research Paper:
+
+        Mannel, H., et al. “Quantum Stochastic Resonance in a Single-Photon Emitter.” Communications Physics, vol. 8, no. 1, 14 Oct. 2025, arxiv.org/abs/2505.14221, https://doi.org/10.1038/s42005-025-02334-4. Accessed 12 Nov. 2025.
+
+    - Analysis: 
+        Stochastic Resonance:
+        Phenomenon in which flunctuation enhances a weak signal.
+        
+        Classical resonance due to thermal noise has been extended into quantum.
+            Fundamental randomness of individual events provides 'noise'
+
+        Nonlinear system amplifies the weak signal by using only 3 things:
+            1 - A weak coherent input, 2 - a source of noise and 3 - a threshold.
+
+        !!! If we use a potentiometer to act as a knob for the project we can design a system that balances structed rhythm and noise over a period of time !!!
+
+        Pathway : [ Weak signal ] -> [ add white noise ] -> [ resonate ] -> [ amplify ] -> [ new clearer signal ]
+        ( Sensor can't pick           ( Frequencies will              ( Amplifies original          ( Output is clear
+          it up well + wide             interact with the                signal only and               and filtered )
+      spectrum of frequencies )     weak signal's frequencies )        removes white noise )
+
+        This process leads to an increase in Signal-to-Noise ration (SNR)
+            High SNR = signal is easier to interpret
+            There will always exist a value that is optimal for SNR (look up function)
+
+    - Double-Well potential: ( Look up equation )
+
+        It helps illustrate the concept of instantons and anti-instantons
+            Think solution to an equation with a finite, nonzero action = critical points (Minima, maxima, etc.)
+
+        Visualization of function with two divots.
+            The particle will move from one of the minima to the other
+
+    - Instanton vs Anti-Instanton
+        Instanton : Jump from original point of particle to the next
+        Anti - Instanton : Jump back to the original state
+
+      Methods to see: 
+            Vibrations - (Posch-Teller) Shows that the instanton is stable if all eigenvalues are negative.
+            Periodic states - (Jacobs and Lame) Excited states are described by periodic instantons, how the path repeats over periodically in euclidian. If negative then configuration is unstable, meaning decay.
+            Perturbation methods - Depends on what it is / often applied to one side of the potential.
+            
+    - In the paper:
+        The flunctuations are added by using thermal noise.
+        Quantum stochastic resonance is indicated by a dip in the FANO factor (ration of variance to mean) and the peak in normalized factorial cumulants as a function of the driving frequency.
+
+        History: It was discovered about 30 years ago that even in the abscense of thermal flunctuations stochastic resonance is possible due to quantum noise.
+        
+        What the paper argues and tries to prove? To show quantum stochastic resonance in the single electron tunneling dynamics of a periodically driven single-photon emitter.
 
 
+     - Analysis of Usage in project:
+        Could showcase effects of noise by using potentiometer and how it affects visualization. On each beat frame compute a switch probability.
       
-
   
