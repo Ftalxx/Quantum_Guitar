@@ -60,7 +60,7 @@ Chakrabarty, Indranil, et al. “Measurement-Induced Randomness and State-Mergin
       What the paper argues and tries to prove? In processing tasks, the increase in cost can be understood by the additional randomness created by the act of measurement. 
 
      Analysis of Usage in project:
-      Theoretically I'm using this just to be able to see that randomness can be purposeful. I will try to measure and let that decide what changes so it's not entirely randomized.
+      Theoretically I'm using this just to be able to see that randomness can be purposeful. I will try to measure and let that decide what changes so it's not entirely randomized. Measurements can be considered as part of the audio synthesis, less measurements can be expected to be a smoother melody. Frequency of how many times we measure can be used as a control for musical entropy.
 
 
 
