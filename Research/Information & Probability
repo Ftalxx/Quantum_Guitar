@@ -151,13 +151,15 @@ Harmonic Oscillator
 
 Fourier Analysis
     > The universal language of wave behavior, used to decompose signals in both music and quantum wavefunctions.
-      
-    - Research Paper:
-            
 
     - Analysis: 
-      
-    - In the paper:
-      
-     - Analysis of Usage in project:
+        This takes a quantum state and allows us to convert phases to binary numbers
+        It allows frequency components of signals to be extracted by knowing the other. It is still used, the formula take an input vector x and transforms it to an output vector Y.
+        The QFT on n qubits requires n Hadamard gates and (n(n-1))/2 2-qubit conditional rotation gates.
+        It should be thought of as a subroutine that can be called rather than an algorithm.
+
+        Addresses the following problem:
+            we wish to estimate the phase (φ) of the eigenvalue to t bits of precision.
+
+     - Analysis of Usage in project: Just background additional knowledge on math behind state changes.
       
