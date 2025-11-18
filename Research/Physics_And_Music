@@ -6,10 +6,6 @@ Musical Acoustics
 
     > Science of how instruments create sound through resonant bodies, air columns, and boundary constraints.
 
-    - Research Paper:
-
-          
-
     - Analysis: 
 
         “harmonic partials vs overtones”
@@ -36,11 +32,14 @@ Musical Acoustics
           A piano and a guitar playing the same note will have the same fundamental frequency, but their spectral envelopes will be different. This is because they have different sets of overtones with different relative strengths, which gives them their unique sound.
 
         “attack-decay-sustain-release ADSR explanation physics”
+          A - attack, D - decay, S - sustain and R - release. It's an envelope (attack shows how long it takes to reach full amplitude, maximum volume), (decay shows the sustained value and how long it'll take to get there).
+          They can show how sounds in the real world get their specific sound (violin - long attack, guitar plucked - short attack)
+          Sustain is how long its held and release is when it stops. 
 
         “spectral centroid timbre”
-
-    - In the paper:
+          the perceptual quality that allows listeners to distinguish between different musical instruments or voices producing the same pitch at the same loudness.
+          Think how some sounds might be seen as "brighter" and others as "darker"
         
-     - Analysis of Usage in project:
+     - Analysis of Usage in project: Simple research on topics related
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
