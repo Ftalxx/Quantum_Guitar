@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "GuitarSoftware",
+			"path": "../../../Documents/PlatformIO/Projects/Left_Hand_Sensors/GuitarSoftware"
+		}
+	],
+	"settings": {}
+}
