@@ -1,0 +1,45 @@
+> Every note we hear results from the same equations that describe standing waves in quantum wells or vibrating particles
+
+Topics
+
+Musical Acoustics
+
+    > Science of how instruments create sound through resonant bodies, air columns, and boundary constraints.
+
+    - Analysis: 
+
+        “harmonic partials vs overtones”
+          Partials - Partials are any individual frequency component of a complex tone.
+          You can take any wave form and break it down into a set of sine waves with different frequencies and amplitudes, each representing a specific pitch and relative loudness, these are called partials.
+
+          Fundamental, harmonics and inharmonic components are all partials.
+
+          Fundamental - the lowest frequency partial, which is usually the perceived pitch.
+
+          Harmonics - Harmonics are a specific type of overtone/partial whose frequency is a whole-number multiple of the fundamental frequency. Just think the multiples of the fundamental.
+
+          Inharmonic - Partials that are not close to whole number rations with the fundamental are called inharmonic. 
+
+          Overtones are partials that are higher in frequency than the fundamental. Basically partials in the sound, excluding the fundamental. CAN BE HARMONIC OR INHARMONIC!
+
+        “why musical notes are not single frequencies”
+          they are composed of a fundamental frequency plus a series of naturally occurring, harmonically related overtones. This makes them more pleasant to the ear than a pure sine wave.
+
+        !! Consider the limitations of appreciating the mathematical precision of the 12 equal semitones in an octave, and understanding how the cultural practice of playing fixed-pitch instruments like pianos led to its prevalence!!!
+
+        “timbre spectral envelope explanation”
+          The shape of a frequency spectrum of a sound. Its a curve that represents the overall shape of a sound's frequency spectrum, connecting the peaks of its partials to show how energy is distributed across different frequencies
+          A piano and a guitar playing the same note will have the same fundamental frequency, but their spectral envelopes will be different. This is because they have different sets of overtones with different relative strengths, which gives them their unique sound.
+
+        “attack-decay-sustain-release ADSR explanation physics”
+          A - attack, D - decay, S - sustain and R - release. It's an envelope (attack shows how long it takes to reach full amplitude, maximum volume), (decay shows the sustained value and how long it'll take to get there).
+          They can show how sounds in the real world get their specific sound (violin - long attack, guitar plucked - short attack)
+          Sustain is how long its held and release is when it stops. 
+
+        “spectral centroid timbre”
+          the perceptual quality that allows listeners to distinguish between different musical instruments or voices producing the same pitch at the same loudness.
+          Think how some sounds might be seen as "brighter" and others as "darker"
+        
+     - Analysis of Usage in project: Simple research on topics related
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
