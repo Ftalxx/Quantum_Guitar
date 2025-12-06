@@ -238,17 +238,6 @@ These states are also indexed by discrete modes n = 1, 2, 3..., with higher mode
 In both music and quantum physics, discrete resonance patterns emerge from continuous wave equations.
 ---
 
-### Quantum Wavefunctions: Probability with Structure  
-Similarly, in **quantum mechanics**, particles are described by **wavefunctions** mathematical functions that hold all possible information about the system.
-
-- Solutions to the **Schrödinger equation** often resemble **standing waves**, like the vibrating string.
-- In systems like the **particle in a box**, **quantized energy levels** arise due to boundary constraints, just like harmonic frequencies on a string.
-- These are also described by **n = 1, 2, 3...** modes, with higher modes having more nodes (points of zero amplitude).
-
-So both musical notes and quantum particles show **discrete resonance patterns** emergent from continuous wave equations.
-
----
-
 ### <ins>Research Connections</ins> 
 Physicists and mathematicians have long noted this connection:
 
