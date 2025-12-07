@@ -1,0 +1,81 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+
+# Load raw hardware data
+df = pd.read_csv("MakeshiftData.csv")
+
+# Motion intensity - HOW HARD IS IT MOVING?
+# Shannon entropy - HOW UNPREDICTABLE IS IT MOVING? 
+# Stability - HOW STEADY IS IT MOVING?
+# Changes Often - HOW CHAOTIC IS IT MOVING? 
+
+# --- Feature Extraction ---
+def motion_intensity(row):
+    return np.mean([
+        abs(row["f1_pitch"]),
+        abs(row["f2_pitch"]),
+        abs(row["f3_pitch"]),
+        abs(row["f4_pitch"]),
+        abs(row["wrist_pitch"]),
+        abs(row["arm_pitch"])
+    ])
+
+# --- Compute Intensity FIRST ---
+df["motion_intensity"] = df.apply(motion_intensity, axis=1)
+
+# --- Shannon Entropy (rolling window on arm pitch) ---
+WINDOW = 10
+
+def motion_entropy_timeseries(series):
+    ent = []
+    for i in range(len(series)):
+        start = max(0, i - WINDOW)
+        segment = series[start:i+1]
+        hist, _ = np.histogram(segment, bins=10, density=True)
+        hist = hist + 1e-9
+        ent.append(stats.entropy(hist))
+    return ent
+
+df["motion_entropy"] = motion_entropy_timeseries(df["arm_pitch"])
+
+# --- Stability (rolling standard deviation of arm) ---
+df["motion_stability"] = df["arm_pitch"].rolling(4).std()
+
+# --- NEW: Expressive Chaos Index (SIGNED slope variance) ---
+df["signed_slope"] = df["motion_intensity"].diff()
+df["changes_often"] = df["signed_slope"].rolling(5).var()
+
+# --- Safe Normalization (prevents NaN/inf collapse) ---
+def normalize(col):
+    if col.max() == col.min():
+        return col
+    return (col - col.min()) / (col.max() - col.min())
+
+df["motion_intensity"] = normalize(df["motion_intensity"])
+df["motion_stability"]  = normalize(df["motion_stability"])
+df["changes_often"]       = normalize(df["changes_often"])
+
+# Save processed dataset
+df.to_csv("DataAnalysisResults.csv", index=False)
+
+# --- Visualization ---
+plt.figure()
+plt.plot(df["motion_intensity"], label="Intensity - Visual")
+plt.plot(df["motion_stability"], label="Stability - Control")
+plt.plot(df["changes_often"], label="Chaos - Changes Often")
+plt.legend()
+plt.title("Human Motion Features Over Time")
+plt.xlabel("Event Index")
+plt.ylabel("Normalized Value")
+plt.show()
+
+# (entropy​, intensity) phase space plot
+
+plt.figure()
+plt.scatter(df["motion_entropy"], df["motion_intensity"])
+plt.xlabel("Motion Entropy (Shannon)")
+plt.ylabel("Motion Intensity")
+plt.title("Expressive Phase Space of Human Gesture")
+plt.show()
