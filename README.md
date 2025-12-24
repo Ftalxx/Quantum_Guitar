@@ -10,6 +10,7 @@ At its core, this is an experiment in human–probability co-creation: how physi
 ## <ins>Background & Intuitive Ideas</ins>
 
 </br>
+
 ### Real-time Musical Interaction
 
 (Can human movement meaningfully guide a generative instrument in real time?)
