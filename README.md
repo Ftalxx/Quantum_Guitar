@@ -48,6 +48,28 @@ Think of the system as a duet between performer and probability.
 - Educational: turns abstract quantum ideas into something you can hear, see, and play with
 The goal is not to “simplify” quantum mechanics, but to make its statistical behavior perceptible through embodied interaction.
 
+## <ins>Design Evolution and Iterative Prototyping</ins>
+
+The current system architecture emerged through multiple design iterations that progressively refined both the physical interface and the underlying control model. Earlier prototypes explored different assumptions about how closely a virtual instrument should emulate a physical guitar, and which design tradeoffs best preserve embodied musical control.
+
+### Early Concept: Virtual Guitar Emulation
+
+Initial prototypes focused on recreating a traditional guitar in mid-air. Finger-mounted sensors were used to estimate virtual fret and string positions, with explicit mappings from spatial location to chord identity. While intuitive, this approach imposed strict spatial accuracy requirements and treated uncertainty as error, limiting expressiveness and robustness.
+
+### Distributed Hardware Prototype (Backpack System)
+
+To address power, wiring, and scalability concerns, a distributed prototype was developed in which computation and power were centralized in a backpack-mounted unit. Although this improved electrical stability and sensor expandability, it negatively impacted playability. Cable drag, constrained posture, and the perceptual shift from “instrument” to “equipment” disrupted embodied interaction. This prototype was intentionally discarded in favor of designs that prioritized musical flow over engineering convenience.
+
+### Transition to Gesture-Centered Control
+
+Subsequent iterations abandoned explicit fretboard reconstruction in favor of modeling hand motion directly. Rather than mapping gestures to predefined chord labels, sensor data was embedded into a continuous latent gesture space where similar hand shapes naturally clustered. This allowed invariant hand postures to correspond to families of harmonically related outcomes, restoring learnability and muscle memory.
+
+### Current Architecture: Layered Deterministic and Probabilistic Control
+
+The final design separates control into two complementary layers. A deterministic classical layer constructs a stable, repeatable latent gesture space that behaves as a playable instrument. A quantum-inspired probabilistic layer is then applied on top, introducing bounded variation without compromising control. This layered approach preserves intentional performance while enabling structured unpredictability, aligning the system’s behavior with both musical practice and probabilistic modeling.
+
+Each discarded prototype informed the final architecture by revealing which constraints enhanced musical expression and which diminished it. The resulting system reflects a deliberate shift from physical emulation toward gesture-driven, probability-aware instrument design.
+
 ## <ins>System Architecture</ins>
 
 The system is designed around modular interaction hardware and software layers communicating in real time.  
