@@ -9,8 +9,6 @@ At its core, this is an experiment in human–probability co-creation: how physi
 
 ## <ins>Background & Intuitive Ideas</ins>
 
----
-
 ### Real-time Musical Interaction
 
 (Can human movement meaningfully guide a generative instrument in real time?)
@@ -19,13 +17,13 @@ Users perform on a virtual instrument using a wearable sensor system composed of
 
 Strumming dynamics, hand orientation, and finger articulation are captured as continuous time-series data and converted into timestamped MIDI control signals. These signals bias a musically constrained generative engine informed by classical music theory principles such as:
 
-harmonic compatibility
-
-scale and mode coherence
-
-rhythmic continuity
+- harmonic compatibility
+- scale and mode coherence
+- rhythmic continuity
 
 This creates a closed feedback loop between embodied motion and evolving musical structure, allowing performers to develop stable control through repeated interaction while retaining expressive flexibility.
+
+---
 
 ### Data Analysis and Quantum
 
@@ -33,21 +31,19 @@ This creates a closed feedback loop between embodied motion and evolving musical
 
 Qiskit-based quantum circuits introduce probabilistic variation as a secondary modulation layer acting on an already stable, gesture-defined control space. IMU-derived motion vectors bias:
 
-rotation angles
-
-entanglement strength
-
-circuit depth
+- rotation angles
+- entanglement strength
+- circuit depth
 
 Measurement outcomes introduce structured variability into:
 
-harmonic realization within constrained chord families
-
-rhythmic subdivision and micro-timing
-
-timbral modulation
+- harmonic realization within constrained chord families
+- rhythmic subdivision and micro-timing
+- timbral modulation
 
 The same gesture may produce subtly different realizations each time, forming a living probability field rather than a fixed algorithm, while remaining anchored to performer intent.
+
+--- 
 
 ### Visualization and Human Expression
 
@@ -56,9 +52,7 @@ The same gesture may produce subtly different realizations each time, forming a 
 The system is designed as a duet between performer and probability.
 
 Interactive: real-time gesture control with immediate audible feedback
-
 Accessible: built from DIY electronics and open-source software
-
 Educational: probabilistic behavior becomes perceptible through sound and motion
 
 The goal is not to simplify quantum mechanics, but to make probabilistic structure legible through embodied interaction, allowing users to develop an intuitive understanding of uncertainty without sacrificing control.
