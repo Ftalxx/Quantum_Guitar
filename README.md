@@ -1,5 +1,7 @@
 # Sensor Haptic Guitar with Quantum Probabilistic Data Analysis
 
+“Does introducing real quantum measurement into a human-conditioned control loop produce measurable temporal structure beyond classical randomness?”
+
 ## <ins>Project Overview</ins>
 
 This project explores a wearable, IMU-based virtual guitar system that fuses embodied human gesture with classical and quantum-inspired algorithms to drive generative sound. Using MIDI, real-time motion sensing, and probabilistic quantum modeling, the system investigates how structured harmony and controlled randomness can coexist at the boundary between deterministic music theory and quantum unpredictability.
@@ -56,6 +58,12 @@ Accessible: built from DIY electronics and open-source software
 Educational: probabilistic behavior becomes perceptible through sound and motion
 
 The goal is not to simplify quantum mechanics, but to make probabilistic structure legible through embodied interaction, allowing users to develop an intuitive understanding of uncertainty without sacrificing control.
+
+## <ins>Possible Hypotheses</ins>
+
+H1 (coupling effect): As the quantum layer coupling strength increases, the joint system exhibits a statistically significant change in output structure (entropy, autocorrelation, cluster separation, predictability) compared to matched classical baselines.
+
+H2 (time-lag effect): The quantum measurement outcomes are better explained by a lagged version of the latent vector (x(t−τ)) than by the instantaneous latent vector x(t), indicating a consistent temporal relationship rather than pure noise.
 
 ## <ins>Design Evolution and Iterative Prototyping</ins>
 
