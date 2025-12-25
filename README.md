@@ -54,21 +54,18 @@ The quantum process provides **uncertainty**, not control. The classical and qua
 ## System Architecture
 
 [ IMU Network ]
-↓
+->
 [ ESP32 Microcontroller ]
-↓
+->
 [ Serial / MIDI Stream ]
-↓
+->
 [ Python Processing Layer ]
-↓
+->
 [ Qiskit Quantum Module ]
-↓
+->
 [ Generative Musical Engine ]
-↓
+->
 [ MIDI Output + Visualization ]
-
-yaml
-Copy code
 
 **Wearable IMU Network**  
 Captures multi-axis motion and orientation data defining the gesture state.
