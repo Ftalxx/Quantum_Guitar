@@ -1,69 +1,82 @@
-## Conceptual Framing: Human Perception as a Bridge to Quantum Probability
+## Conceptual Framing: Perception as an Interface to Probabilistic Systems
 
-This project is guided by the idea that human perception is the bridge between abstract quantum probability and physical experience, with sound acting as the medium of translation.
+This project is guided by the idea that **human perception can serve as an interface to abstract probabilistic behavior**, with sound acting as a time-based medium through which statistical structure becomes perceptible.
 
-At the center of the system are three interacting layers:
-- Quantum statistics
-- Neural perception
-- Auditory synthesis
+Rather than attempting to directly represent quantum processes, the system explores how **probability, uncertainty, and structure can be experienced through interaction**, using embodied gesture and auditory feedback as the coupling mechanism.
 
-Music becomes the perceptual language through which humans experience changes in probabilistic structure.
----
+At a conceptual level, the system integrates three interacting components:
 
-### Music as a Perceptual Translator
+- classical probabilistic structure (latent gesture representation)
+- quantum measurement statistics (irreducible randomness)
+- human perception (adaptation and interpretation over time)
 
-Music functions as the perceptual medium through which humans experience changes in quantum probabilities. While quantum systems evolve through mathematical distributions, sound allows those distributions to become dynamically perceivable in time.
-
-Rather than treating music as output only, the system treats it as:
-
-a sensory decoder of probability, a temporal display of uncertainty and a structural mirror of stochastic behavior
+Music functions as the perceptual domain in which these components meet.
 
 ---
 
-### Auditory Embodiment of Information
+### Sound as a Temporal Representation of Probability
 
-The auditory system is uniquely suited to detect:
-- pattern
-- temporal variation
-- fluctuation and entropy
+Quantum systems evolve through probability distributions rather than deterministic trajectories. While these distributions are typically represented mathematically, they are difficult to intuit over time.
 
-By mapping quantum outcomes to sound, the project embeds abstract probability into neurally interpretable structure. In this way, probability is not only calculated it is felt.
+Sound provides a naturally temporal medium for representing probabilistic change. Variations in timing, pitch, harmony, and timbre allow statistical behavior to be perceived dynamically rather than statically.
+
+In this system, sound is treated not merely as output, but as:
+
+- a temporal representation of probabilistic variation  
+- a perceptual display of uncertainty  
+- a structured mapping from abstract statistics to human experience  
+
+This allows probabilistic behavior to be explored interactively rather than analytically alone.
 
 ---
 
-### Human Motion as a Control Boundary
+### Auditory Perception and Structure Detection
 
-Human motion provides a classical interface into probabilistic behavior.
+The human auditory system is particularly sensitive to:
 
-Through gesture, the performer:
-biases quantum parameters, shapes probability distributions and influences how uncertainty unfolds temporally
+- temporal patterns  
+- rhythmic variation  
+- changes in entropy and predictability  
 
-This does not imply direct physical interaction with quantum particles, but rather the shaping of boundary conditions under which quantum probability is prepared and observed.
+By mapping probabilistic outcomes to sound, the system embeds abstract statistical behavior into a form that humans can detect, adapt to, and learn from through repeated interaction.
 
---- 
+The goal is not to anthropomorphize probability, but to leverage perceptual sensitivity as an analytical tool: **structure that is difficult to see numerically may become apparent when heard over time**.
 
-### Three Comparative Regimes of Behavior
+---
 
-The system is structured to compare three distinct logical regimes:
+### Human Motion as a Classical Boundary Condition
 
-Classical Determinism:
-Rule-based, predictable, repeatable behavior driven purely by music theory constraints.
+Human gesture serves as a **classical control boundary** for the probabilistic system.
 
-Quantum Probability:
-Measurement-driven outcomes governed by irreducible randomness and distributional structure.
+Through embodied motion, the performer biases parameters of the quantum process, shaping probability distributions without directly determining outcomes. This interaction does not imply direct physical manipulation of quantum states, but rather the conditioning of how probabilistic processes are prepared and observed.
 
-Human-Biased Probability:
-A hybrid regime where embodied human motion biases quantum statistics, producing structured unpredictability.
+In this sense, human motion defines *context*, not outcome.
 
-This comparison allows direct observation of how:
-determinism, stochasticity, and human control differ both mathematically and perceptually.
+---
 
---- 
+### Comparative Regimes of System Behavior
 
-### Core Research Tension
+The system is designed to compare three distinct regimes:
+
+**Classical Determinism**  
+Rule-based behavior driven entirely by deterministic mappings and music-theoretic constraints.
+
+**Quantum Probability**  
+Measurement-driven outcomes governed by irreducible randomness and statistical structure.
+
+**Human-Conditioned Probability**  
+A hybrid regime in which embodied human input biases quantum parameters, producing structured variability rather than pure noise.
+
+This comparison allows differences between determinism, stochasticity, and human-conditioned uncertainty to be examined both quantitatively and perceptually.
+
+---
+
+### Core Research Focus
 
 At its core, the project studies the boundary between:
 
-structured order and irreducible uncertainty
+**structured order and irreducible uncertainty**
 
-Rather than attempting to eliminate noise, the system asks whether noise itself contains latent structure that becomes perceptible through embodiment and sound.
+Rather than attempting to suppress noise, the system treats uncertainty as a resource whose structure may become observable through interaction, perception, and time.
+
+The central question is not whether probabilistic systems can be controlled, but **how structure emerges when control is partial and outcomes remain uncertain**.
