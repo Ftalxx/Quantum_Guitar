@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Sensor Haptic Guitar with Quantum Probabilistic Data Analysis
 
 **Research Question**  
