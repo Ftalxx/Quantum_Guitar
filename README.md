@@ -472,4 +472,3 @@ Additional ideas while researching:
 - Show stochastic resonance by finding a noise level where quantum-driven switches synchronize with rhythm, quantitatively and audibly.
 - Prototype measurement-based control, where basis choices from gesture steer musical structure.
 - Treat decoherence parameters as musical knobs, turning lab-grade error models into sound design.
->>>>>>> e9d7fc5 (Reestablished project structure: ESP32 Firmware, analysis and research)
