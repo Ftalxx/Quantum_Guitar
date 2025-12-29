@@ -1,0 +1,242 @@
+import pandas as pd
+import numpy as np
+import serial
+import time
+import csv
+import mido
+from mido import Message
+
+# -----------------------------
+# MIDI SETUP
+# -----------------------------
+out = mido.open_output()
+
+# C Major chord notes (per string)
+STRING_NOTES = [
+    40,  # string 6: E -> G (3rd fret)
+    43,  # string 5: A -> C (3rd fret)
+    50,  # string 4: D -> E (2nd fret)
+    55,  # string 3: G open
+    59,  # string 2: B -> C (1st fret)
+    64   # string 1: high E open
+]
+
+def get_string_from_position(pos):
+    idx = int(pos * 6)
+    if idx >= 6:
+        idx = 5
+    return idx
+
+def send_midi_strum(direction, intensity, string_pos):
+    channel = 0 if direction == "down" else 1
+    vel = int(min(127, max(1, intensity * 0.01)))
+
+    s = get_string_from_position(string_pos)
+    note = STRING_NOTES[s]
+
+    msg = Message('note_on', note=note, velocity=vel, channel=channel)
+    out.send(msg)
+
+    off = Message('note_off', note=note, velocity=0, channel=channel)
+    out.send(off)
+
+
+# -----------------------------
+# SETTINGS
+# -----------------------------
+PORT = "COM3"
+BAUD = 115200
+
+CALIBRATION_DURATION = 4
+FINAL_OUTPUT = "strum_live_fields.csv"
+
+TRAINING_PHASES = [
+    ("slow", 5),
+    ("fast", 5),
+    ("up_only", 5),
+    ("sharp", 5),
+    ("soft", 5),
+    ("pause", 3),
+    ("normal", 5)
+]
+
+# -----------------------------
+# CALIBRATION (UNCHANGED)
+# -----------------------------
+def collect_calibration_data():
+    ser = serial.Serial(PORT, BAUD, timeout=1)
+    time.sleep(2)
+
+    print("\nWaiting for ESP32 header...")
+    header = None
+    while True:
+        if ser.in_waiting:
+            line = ser.readline().decode(errors="ignore").strip()
+            if "timestamp" in line:
+                header = line.split(",")
+                break
+
+    print("Header:", header)
+
+    print("\nStrum in beat for 4 seconds to calibrate...")
+    time.sleep(1)
+    print("GO.")
+
+    start = time.time()
+    rows = []
+
+    while time.time() - start < CALIBRATION_DURATION:
+        if ser.in_waiting:
+            raw = ser.readline().decode(errors="ignore").strip()
+            if raw and raw[0].isdigit():
+                parts = raw.split(",")
+                if len(parts) == len(header):
+                    rows.append(parts)
+
+    ser.close()
+
+    df = pd.DataFrame(rows, columns=header)
+    df = df.apply(pd.to_numeric, errors="coerce")
+    return df
+
+def compute_axis_features(df):
+    axes = df.columns[1:]
+    results = {}
+
+    for col in axes:
+        series = df[col].dropna()
+
+        col_min = series.min()
+        col_max = series.max()
+        amplitude = col_max - col_min
+
+        signs = np.sign(series)
+        zero_crossings = np.sum(signs[:-1] * signs[1:] < 0)
+
+        results[col] = {
+            "min": float(col_min),
+            "max": float(col_max),
+            "amplitude": float(amplitude),
+            "zero_crossings": int(zero_crossings)
+        }
+    return results
+
+def determine_primary_axis(results):
+    best_axis = None
+    best_score = -1
+    for axis, stats in results.items():
+        score = stats["amplitude"] + stats["zero_crossings"] * 50
+        if score > best_score:
+            best_score = score
+            best_axis = axis
+    return best_axis
+
+# -----------------------------
+# TRAINING LOGGER (UNCHANGED)
+# -----------------------------
+def collect_training_data():
+    ser = serial.Serial(PORT, BAUD, timeout=1)
+    time.sleep(2)
+
+    print("\nWaiting for header...")
+    header_line = ""
+    while True:
+        if ser.in_waiting:
+            text = ser.readline().decode(errors="ignore").strip()
+            if "timestamp" in text:
+                header_line = text
+                break
+
+    print("Header:", header_line)
+    headers = header_line.split(",") + ["label"]
+
+    all_rows = []
+
+    print("\n=== STARTING STRUM TRAINING ===")
+    time.sleep(1)
+
+    for label, duration in TRAINING_PHASES:
+        print(f"\n>>> Prepare for: {label} ({duration}s)")
+        time.sleep(2)
+        print("GO!")
+
+        start = time.time()
+        while time.time() - start < duration:
+            if ser.in_waiting:
+                raw = ser.readline().decode(errors="ignore").strip()
+                if raw and raw[0].isdigit():
+                    row = raw.split(",") + [label]
+                    all_rows.append(row)
+
+        print(f"Done: {label}")
+
+    ser.close()
+
+    df = pd.DataFrame(all_rows, columns=headers)
+    df = df.apply(pd.to_numeric, errors="ignore")
+    return df
+
+# -----------------------------
+# LIVE STRUM FIELD GENERATOR + REAL-TIME MIDI + CSV STREAMING
+# -----------------------------
+def compute_live_strum_fields(df, axis, cal_min, cal_max):
+    
+    # Prepare CSV writer for background save
+    csv_file = open(FINAL_OUTPUT, "w", newline="")
+    writer = csv.writer(csv_file)
+    writer.writerow(["timestamp", "direction", "intensity", "string_position", "label"])
+
+    t = df["timestamp"].values / 1_000_000
+    y = df[axis].values
+
+    slope = np.gradient(y, t)
+    df["direction"] = np.where(slope > 0, "up", "down")
+
+    df["intensity"] = abs(y)
+
+    df["string_position"] = (y - cal_min) / (cal_max + 1e-9 - cal_min)
+    df["string_position"] = df["string_position"].clip(0, 1)
+
+    # REAL-TIME MIDI + CSV STREAMING
+    for i in range(len(df)):
+        direction = df["direction"].iloc[i]
+        intensity = df["intensity"].iloc[i]
+        string_pos = df["string_position"].iloc[i]
+        label = df["label"].iloc[i]
+
+        # Send live MIDI
+        send_midi_strum(direction, intensity, string_pos)
+
+        # Save row silently
+        writer.writerow([
+            df["timestamp"].iloc[i],
+            direction,
+            intensity,
+            string_pos,
+            label
+        ])
+
+    csv_file.close()
+    return df
+
+
+# -----------------------------
+# MASTER PIPELINE
+# -----------------------------
+if __name__ == "__main__":
+    print("\n=== STRUM CALIBRATION ===")
+    cal_df = collect_calibration_data()
+
+    results = compute_axis_features(cal_df)
+    primary_axis = determine_primary_axis(results)
+    cal_min = results[primary_axis]["min"]
+    cal_max = results[primary_axis]["max"]
+
+    print("\nPRIMARY AXIS:", primary_axis)
+
+    training_df = collect_training_data()
+
+    print("\n=== LIVE STRUM → MIDI + BACKGROUND CSV SAVE ===")
+    live_df = compute_live_strum_fields(training_df, primary_axis, cal_min, cal_max)
+
+    print("\nDone.")
