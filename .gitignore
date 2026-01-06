@@ -1,0 +1,5 @@
+edge/venv
+edge/data
+edge/logs
+edge/__pycache__/
+*.pyc
