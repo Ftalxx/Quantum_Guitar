@@ -1,0 +1,201 @@
+
+from flask import Flask, jsonify, redirect, render_template_string, request
+import subprocess
+
+app = Flask(__name__)
+
+PORTAL_HTML = """
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wi-Fi Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 24px;
+    }
+    h1 { font-size: 26px; }
+    label { display: block; margin-top: 14px; }
+    select, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      margin-top: 18px;
+      background: #ffffff;
+      color: #000;
+      font-weight: 600;
+    }
+    pre {
+      margin-top: 18px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wi-Fi Setup</h1>
+  <p>If you see this, rendering works.</p>
+
+  <label>Network</label>
+  <select id="ssid"></select>
+
+  <label>Security Type</label>
+  <select id="security">
+    <option value="psk">Home / WPA2-WPA3</option>
+    <option value="peap">Enterprise (PEAP)</option>
+    <option value="ttls">Enterprise (TTLS)</option>
+  </select>
+
+  <label>Username (Enterprise only)</label>
+  <input id="username" placeholder="username">
+
+  <label>Password</label>
+  <input type="password" id="password">
+
+  <button onclick="connect()">Connect</button>
+
+  <pre id="status"></pre>
+
+<script>
+async function loadNetworks() {
+  const res = await fetch('/scan');
+  const ssids = await res.json();
+  const select = document.getElementById('ssid');
+  select.innerHTML = '';
+  ssids.forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s;
+    opt.text = s;
+    select.appendChild(opt);
+  });
+}
+
+async function connect() {
+  const payload = {
+    ssid: document.getElementById('ssid').value,
+    security: document.getElementById('security').value,
+    username: document.getElementById('username').value,
+    password: document.getElementById('password').value
+  };
+
+  const res = await fetch('/connect', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  });
+
+  document.getElementById('status').textContent = await res.text();
+}
+
+loadNetworks();
+</script>
+</body>
+</html>
+"""
+
+@app.route("/")
+def root():
+    # iOS captive portal safe redirect
+    return redirect("/portal")
+
+@app.route("/portal")
+def portal():
+    return render_template_string(PORTAL_HTML)
+
+@app.route("/scan")
+def scan():
+    result = subprocess.check_output(
+        ["nmcli", "-t", "-f", "SSID", "dev", "wifi", "list"],
+        text=True
+    )
+    ssids = sorted(set(line for line in result.splitlines() if line))
+    return jsonify(ssids)
+
+@app.route("/connect", methods=["POST"])
+def connect():
+    data = request.get_json()
+
+    ssid = data.get("ssid")
+    password = data.get("password")
+    username = data.get("username")
+    security = data.get("security")
+
+    try:
+        if security == "psk":
+            con_name = f"psk-{ssid}"
+
+            subprocess.run(
+                ["nmcli", "connection", "delete", con_name],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+
+            subprocess.check_output([
+                "nmcli", "connection", "add",
+                "type", "wifi",
+                "ifname", "wlan0",
+                "con-name", con_name,
+                "ssid", ssid
+            ], text=True)
+
+            subprocess.check_output([
+                "nmcli", "connection", "modify", con_name,
+                "wifi-sec.key-mgmt", "wpa-psk",
+                "wifi-sec.psk", password
+            ], text=True)
+
+            subprocess.check_output([
+                "nmcli", "connection", "up", con_name
+            ], text=True)
+
+            return f"Connecting to {ssid} (WPA-PSK)…"
+
+
+        elif security in ("peap", "ttls"):
+            con_name = f"ent-{ssid}"
+
+            subprocess.run(
+                ["nmcli", "connection", "delete", con_name],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+
+            subprocess.check_output([
+                "nmcli", "connection", "add",
+                "type", "wifi",
+                "ifname", "wlan0",
+                "con-name", con_name,
+                "ssid", ssid
+            ], text=True)
+
+            subprocess.check_output([
+                "nmcli", "connection", "modify", con_name,
+                "wifi-sec.key-mgmt", "wpa-eap",
+                "802-1x.eap", security,
+                "802-1x.identity", username,
+                "802-1x.password", password,
+                "802-1x.phase2-auth", "mschapv2"
+            ], text=True)
+
+            subprocess.check_output([
+                "nmcli", "connection", "up", con_name
+            ], text=True)
+
+            return f"Connecting to {ssid} (Enterprise {security.upper()})…"
+        else:
+            return "Unsupported security type", 400
+
+    except subprocess.CalledProcessError as e:
+        return e.output, 400
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=80)
