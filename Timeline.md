@@ -37,7 +37,7 @@ hand / source identifier |
 high-resolution timestamp |
 payload type and raw bytes
 
-- Designed session semantics tied to hardware power state
+- Designed session semantics tied to hardware power state:
 power-off = no session |
 power-on = single intentional session |
 calibration only at session start
