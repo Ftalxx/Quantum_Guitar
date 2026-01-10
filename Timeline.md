@@ -32,14 +32,14 @@ List of accomplishments:
 - Verified end-to-end data integrity: transmit, receive, decode, and store on the Pi
 
 - Defined and locked a versioned binary packet format, including:
-packet version
-hand / source identifier
-high-resolution timestamp
+packet version |
+hand / source identifier |
+high-resolution timestamp |
 payload type and raw bytes
 
 - Designed session semantics tied to hardware power state
-power-off = no session
-power-on = single intentional session
+power-off = no session |
+power-on = single intentional session |
 calibration only at session start
 
 - Architected semantic separation of data streams (STRUMMING vs LEFT_HAND)
@@ -52,12 +52,12 @@ calibration only at session start
 
 - Decoupled network provisioning logic from runtime data flow
 
-- Built a self-contained Wi-Fi provisioning system on the Raspberry Pi:
-automatic hotspot fallback
-phone-accessible captive portal
-iOS-compatible behavior
-Implemented dynamic Wi-Fi network scanning
-Supported WPA2 / WPA3 Personal networks
+- Built a self-contained Wi-Fi provisioning system on the Raspberry Pi: 
+automatic hotspot fallback | 
+phone-accessible captive portal | 
+iOS-compatible behavior | 
+Implemented dynamic Wi-Fi network scanning | 
+Supported WPA2 / WPA3 Personal networks | 
 Supported WPA-Enterprise (PEAP / TTLS) with username/password authentication
 
 - Used persistent NetworkManager connection profiles (not one-shot commands)
@@ -65,7 +65,7 @@ Supported WPA-Enterprise (PEAP / TTLS) with username/password authentication
 - Verified forget → reprovision → reconnect behavior end-to-end
 
 - Converted the Raspberry Pi to appliance mode
-no login screen
+no login screen |
 no desktop dependency
 
 - Ensured automatic reconnection on boot to known networks
