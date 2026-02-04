@@ -58,7 +58,7 @@ The quantum process provides **uncertainty**, not control. The classical and qua
 ->
 [ ESP32 Microcontroller ]
 ->
-[ Serial / MIDI Stream ]
+[ WIFI/UDP ]
 ->
 [ Python Processing Layer ]
 ->
@@ -87,8 +87,12 @@ Converts measurement-modulated outputs into MIDI events routed to DAWs or synthe
 **H1 (Coupling Effect)**  
 As quantum coupling strength increases, the joint human–quantum system exhibits statistically significant changes in output structure (e.g., entropy, autocorrelation, clustering, predictability) compared to matched classical random baselines.
 
+Coupling strength is defined as the interpolation weight λ controlling the contribution of gesture-conditioned circuit parameters relative to a fixed baseline circuit, allowing systematic interpolation between purely classical and fully gesture-conditioned quantum modulation.
+
 **H2 (Time-Lag Effect)**  
 Quantum measurement outcomes are better explained by a lagged version of the latent gesture state, `x(t−τ)`, than by the instantaneous state `x(t)`, indicating nontrivial temporal dependency rather than pure noise.
+
+Gesture vectors are constructed from stroke or window level features including intensity, jitter, inter-sensor coordination, and temporal dynamics, and are projected into a compact latent embedding using statistical dimensionality reduction or representation learning methods.
 
 ---
 
