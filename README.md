@@ -1,5 +1,5 @@
 
-# Sensor Haptic Guitar with Quantum Probabilistic Data Analysis
+# Sensor Haptic Instrument with Quantum Probabilistic Data Analysis
 
 **Research Question**  
 *Does introducing real quantum measurement into a human-conditioned control loop produce measurable temporal structure beyond classical randomness?*
